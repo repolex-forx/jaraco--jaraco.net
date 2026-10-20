@@ -1,1 +1,129 @@
-Initializing
+# Repolex Knowledge Graph of jaraco/jaraco.net
+
+RDF knowledge graph data for [jaraco/jaraco.net](https://github.com/jaraco/jaraco.net), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download jaraco/jaraco.net
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 014d6324c25d4ec50fcdcf7d931229fa13d05e5a
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 014d6324c25d4ec50fcdcf7d931229fa13d05e5a
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 085df00428be38d2b7e7914ac60c1c0adda9c856.nq.gz
+│   ├── 09ad7c4b46adf55536a1549abc3885944e55a3b4.nq.gz
+│   ├── 0a838f79dc89d6ea565d08a77c068356dd2d3d22.nq.gz
+│   ├── 0e5111bccb3ff75057baa51675d5061197830087.nq.gz
+│   ├── 10dd965f5381d269614eb5589f03fef4158f7487.nq.gz
+│   ├── 1ecc7e5f7741b2bdb71e0f1c0f6d5146486ac18d.nq.gz
+│   ├── 204930a7fedbc7ca428861f0c51fb2aa881ca9eb.nq.gz
+│   ├── 2cb3451021a3ba7fe1c97797c0779b6297327bcc.nq.gz
+│   ├── 2d003dbfe7e63270eefb08b0d7acb3af5fb6c799.nq.gz
+│   ├── 2e3f4dd791a6372b427d618eb0baa8c4dc58e5f0.nq.gz
+│   ├── 3026bbb1b828088f35fb64965e3ecbbaa7066972.nq.gz
+│   ├── 304196f81e11a168c9894f966e4a617ebf4ed53c.nq.gz
+│   ├── 341adc37ddf3300539fd8b29c42ae8075ee4e237.nq.gz
+│   ├── 34af48eb2c9ac9754a55e8831c1c717749920b20.nq.gz
+│   ├── 43cf5ca84a3bf3d64cba971efd16cd80a5232baa.nq.gz
+│   ├── 54cc8303b22089e12053e552d4e6cb852a865b8a.nq.gz
+│   ├── 577e87a793a20e413f7321f4f17ec1eba2ea1962.nq.gz
+│   ├── 5bdc232005af9be104a00437ae9bc64417a4c1cc.nq.gz
+│   ├── 62c0ec57cde7c7271fb49b4c4cce1d6304ab879e.nq.gz
+│   ├── 63c0825f6bd49615f4f386b95463111f7992f6bc.nq.gz
+│   ├── 6addb388033ddbdb850e3d5415258a1d6fef0069.nq.gz
+│   ├── 70aac9723577601f1a3e7303ca1d20bcec0ca0c5.nq.gz
+│   ├── 71bdd9bf38600e7df8d88258334636fff8df0587.nq.gz
+│   ├── 724370638fc188317bbc7dc868f1a571995fd796.nq.gz
+│   ├── 726d442216703b04efe521d47eec1e24e2186641.nq.gz
+│   ├── 73767fd569d94b0eaee88431ae572350e2169d92.nq.gz
+│   ├── 74ed272b7435ab217056d82670f28ab4f8bc9115.nq.gz
+│   ├── 7a053d4c638b775d1d76364cdba6bbf342cec1ed.nq.gz
+│   ├── 7b0d0e7ec19d5a5205f898f20cb08b45a8f59c8d.nq.gz
+│   ├── 7bbf33d83cbf2a0db5f338d154d82254c4d584c1.nq.gz
+│   ├── 803a02d5c1215a6b40d434be4c1d3553e6c2adfd.nq.gz
+│   ├── 806cad559e3ff1efb568f273a543fa7b5aced2e3.nq.gz
+│   ├── 80af57a924f472cfd25057acce10f14fdeef2242.nq.gz
+│   ├── 87d22713b9c83ad756c377ebbdf6763c624a2632.nq.gz
+│   ├── 8965d8bacb034c04f85309cdf4a6d19d4479f866.nq.gz
+│   ├── 9bf5441a5dda6aa9d702cde7e981f7eab1b2efa8.nq.gz
+│   ├── a13034a6de239943c09fccb812b42151eb6b8ba7.nq.gz
+│   ├── a7adc59155dd11f23546940beded61fe00815971.nq.gz
+│   ├── ab6ffe961b24e639dd5ba04c6e2bd55d86b37e95.nq.gz
+│   ├── ae0b2319dd01c94993eedcc320de9dd1ab4eb4d1.nq.gz
+│   ├── aec98c59273c65f30902a8a3a3b9c9f15b472e33.nq.gz
+│   ├── b0664d83e4258d7644cfa7164f863403312ba046.nq.gz
+│   ├── b06cc0e5df697a81a79f5ea2e11e5f4f1a29b826.nq.gz
+│   ├── c832f5af25782f59029983aaacb5d30d38e2c72e.nq.gz
+│   ├── d05a24cd3bbf74f274e25b1a18be959b5b510cdd.nq.gz
+│   ├── d466f8c72232ae32a88bcba615e15c958565cc1b.nq.gz
+│   ├── dba54522aa7cb2040a8443cde91bc98c0a02bb8c.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── faed815ed8bc85fd44ce459259f2caa74a94ed25.nq.gz
+│   └── fc8b9296cc25fffece89f21df6f08e214ae88306.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 014d6324c25d4ec50fcdcf7d931229fa13d05e5a.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 58 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[jaraco/jaraco.net](https://github.com/jaraco/jaraco.net)
+
+---
+*Parsed on 2026-10-20 by [repolex](https://repolex.ai)*
